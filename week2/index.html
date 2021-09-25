@@ -7,6 +7,42 @@
     <title>Week 2</title>
   </head>
   <body>
-    <h1>Week 2</h1>
+    <input type="text" placeholder="Enter a number" id="input-text" />
+    <input type="text" placeholder="Enter a number" id="input-text-two" />
+    <br />
+    <button onclick="displaySeries()">Calculate Series</button>
+    <br />
+    <button onclick="add()">Add two numbers</button>
+    <div id="display"></div>
+
+    <script>
+      function calculateSeries(num) {
+        if (num === 0) return 0
+        return num + calculateSeries(num - 1)
+      }
+
+      function displaySeries() {
+        const inputValue = document.getElementById("input-text").value
+        const div = document.getElementById("display")
+        const inputInt = parseInt(inputValue)
+
+        if (inputInt !== NaN) {
+          div.innerHTML = `Total: ${calculateSeries(inputInt)}`
+        }
+      }
+
+      const add = () => {
+        const firstInput = document.getElementById("input-text").value
+        const secondInput = document.getElementById("input-text-two").value
+        const outputDiv = document.getElementById("display")
+
+        const inputFloatOne = parseFloat(firstInput)
+        const inputFloatTwo = parseFloat(secondInput)
+
+        const output = inputFloatOne + inputFloatTwo
+        outputDiv.innerHTML = `Result: ${output}`
+      }
+    </script>
+    <script src="Practice/hoist.js"></script>
   </body>
 </html>
