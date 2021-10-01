@@ -47,3 +47,5 @@ liElement.addEventListener("click", (e) => console.log("clicked on li"))
 //   },
 //   false
 // )
+
+console.log("test")
