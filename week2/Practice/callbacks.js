@@ -15,5 +15,4 @@ const sing = (lyrics, callback) => {
 sing(lyrics, displaySong)
 
 // example 2: use an anonymous function
-const singAnonymous = (lyrics, () => console.log(lyrics))
-singAnonymous()
+sing(lyrics, () => console.log(lyrics))
