@@ -8,5 +8,126 @@
   </head>
   <body>
     <h1>Week 4</h1>
+
+    <!--Main form-->
+    <form name="search" id="searchForm" action="/search">
+      <input name="searchInput" />
+      <button name="submitButton" type="submit">Search</button>
+    </form>
+
+    <br />
+
+    <!--Hero form-->
+    <form id="hero">
+      <!--Text-->
+      <p>Names:</p>
+      <label for="heroName"
+        >Superhero Name:
+        <input
+          type="text"
+          id="heroName"
+          name="heroName"
+          autofocus
+          placeholder="Your Superhero Name"
+          maxlength="32"
+        />
+      </label>
+      <br />
+      <br />
+      <!--Password-->
+      <label for="realName"
+        >Real Name:
+        <input
+          type="password"
+          id="realName"
+          name="realName"
+          autofocus
+          placeholder="Your Real Name"
+          maxlength="32"
+        />
+      </label>
+      <br />
+      <!--Checkboxes-->
+      <p>Super Powers:</p>
+      <label for="flight"
+        >Flight:
+        <input type="checkbox" id="flight" value="Flight" name="powers" />
+      </label>
+      <label for="strength"
+        >Super Strength:
+        <input type="checkbox" id="strength" value="Strength" name="powers" />
+      </label>
+      <label for="speed"
+        >Super Speed:
+        <input type="checkbox" id="speed" value="Super Speed" name="powers" />
+      </label>
+      <label for="energy"
+        >Energy Blasts:
+        <input
+          type="checkbox"
+          id="energy"
+          value="Energy Blasts"
+          name="powers"
+        />
+      </label>
+      <label for="telekinesis"
+        >Telekinesis:
+        <input
+          type="checkbox"
+          id="telekinesis"
+          value="Telekinesis"
+          name="powers"
+        />
+      </label>
+      <p>What type of hero are you?</p>
+      <label for="hero"
+        >Hero:
+        <input type="radio" name="category" value="Hero" id="hero" />
+      </label>
+      <label for="villain"
+        >Villain:
+        <input type="radio" name="category" value="Villain" id="villain" />
+      </label>
+      <label for="anti-hero"
+        >Anti-Hero:
+        <input type="radio" name="category" value="Antihero" id="anti-hero" />
+      </label>
+      <label for="neutral">
+        Neutral:
+        <input type="radio" name="category" value="Neutral" id="neutral" />
+      </label>
+      <label for="age">
+        Age:
+        <input type="number" id="age" name="age" min="0" step="1" />
+      </label>
+      <br />
+      <br />
+      <!--Select-->
+      <label for="City"
+        >Base of Operations:
+        <select name="city" id="city">
+          <option value="" selected>Choose a City</option>
+          <option value="Metropolis">Metropolis</option>
+          <option value="Gotham City">Gotham City</option>
+          <option value="Keystone City">Keystone City</option>
+          <option value="Coast City">Coast City</option>
+          <option value="Star City">Star City</option>
+        </select>
+      </label>
+      <br />
+      <br />
+      <label for="origin">
+        Origin Story:
+        <textarea name="origin" id="origin" cols="30" rows="10"></textarea>
+      </label>
+      <br />
+      <p>Upload file:</p>
+      <input type="file" />
+      <br />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <script src="Practice/hero.js"></script>
+    <script src="Practice/main.js"></script>
   </body>
 </html>
