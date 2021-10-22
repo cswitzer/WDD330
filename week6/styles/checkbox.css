@@ -3,7 +3,7 @@ styling for the checkbox
 credit to https://www.youtube.com/watch?v=cXVbsTT5gU8
 */
 input[type="checkbox"] + label {
-  display: block;
+  display: inline-block;
   margin: 0.2rem;
   cursor: pointer;
 }
@@ -29,7 +29,7 @@ input[type="checkbox"] + label:before {
 }
 
 input[type="checkbox"]:checked + label:before {
-  background-color: aquamarine;
-  color: #000;
-  border-color: turquoise;
+  background-color: #0fc57c;
+  color: #fff;
+  border-color: #0fc57c;
 }

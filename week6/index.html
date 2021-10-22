@@ -13,23 +13,29 @@
     <title>Todo's</title>
   </head>
   <body>
-    <div class="list">
-      <h1>TODO</h1>
-      <input type="text" />
-      <ul>
-        <li>
-          <input type="checkbox" id="c0" class="checkbox" checked />
-          <label for="c0">Pay bills</label>
-        </li>
-        <li>
-          <input type="checkbox" id="c1" class="checkbox" />
-          <label for="c1">Pay bills</label>
-        </li>
-        <li>
-          <input type="checkbox" id="c2" class="checkbox" />
-          <label for="c2">Pay bills</label>
-        </li>
-      </ul>
+    <div class="container">
+      <div class="todo-container">
+        <h1>TODO LIST</h1>
+        <h3>Add Item</h3>
+        <div class="add-todo-field">
+          <input type="text" />
+          <button>Add</button>
+        </div>
+        <ul id="todo-list">
+          <li>
+            <input type="checkbox" id="c0" class="checkbox" checked />
+            <label for="c0">Go to the store to retrieve some groceries</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c1" class="checkbox" />
+            <label for="c1">Pay bills</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c2" class="checkbox" />
+            <label for="c2">Pay bills</label>
+          </li>
+        </ul>
+      </div>
     </div>
     <script src="scripts/test.js"></script>
   </body>
