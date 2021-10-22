@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/checkbox.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -13,30 +13,24 @@
     <title>Todo's</title>
   </head>
   <body>
-    <div class="container">
-      <div class="todo-container">
-        <h1>Todo's</h1>
-        <div class="todo-box">
-          <p>
-            <input type="checkbox" name="" id="" />
-            <span>Finally, my code is working!!!!!</span>
-          </p>
-        </div>
-        <div class="todo-box">
-          <p>
-            <input type="checkbox" name="" id="" />
-            <span>I don't feel like doing dishes, but I will</span>
-          </p>
-        </div>
-        <div class="todo-box">
-          <p>
-            <input type="checkbox" name="" id="" />
-            <span>Do a bunch of random stuff that makes no sense haha</span>
-          </p>
-        </div>
-        <div id="progress">Hello</div>
-        <div></div>
-      </div>
+    <div class="list">
+      <h1>TODO</h1>
+      <input type="text" />
+      <ul>
+        <li>
+          <input type="checkbox" id="c0" class="checkbox" checked />
+          <label for="c0">Pay bills</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c1" class="checkbox" />
+          <label for="c1">Pay bills</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c2" class="checkbox" />
+          <label for="c2">Pay bills</label>
+        </li>
+      </ul>
     </div>
+    <script src="scripts/test.js"></script>
   </body>
 </html>
