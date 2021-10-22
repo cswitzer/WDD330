@@ -24,18 +24,52 @@
 }
 
 .add-todo-field {
-  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
 }
 
-.add-todo-field > input[type="text"] {
+#add-text-container {
   width: 80%;
+}
+
+#add-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  padding-inline-start: 0;
+}
+
+#add-text-container > input[type="text"] {
+  width: 90%;
   height: 1.5rem;
   font-size: 1.2rem;
   padding: 0.3rem;
   border-radius: 0.3rem;
 }
 
-.add-todo-field > button {
+#add-button-container > button {
+}
+
+#add-button > button {
+  margin-left: auto;
+}
+
+.noborder-button-add {
+  width: 20%;
+  display: inline-block;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.noborder-button-add:hover {
+  color: #0fc57c;
+}
+
+.noborder-button-delete {
   width: 10%;
   display: inline-block;
   font-size: 1rem;
@@ -45,17 +79,29 @@
   background: none;
 }
 
-.add-todo-field > button:hover {
-  color: #0fc57c;
+.noborder-button-delete:hover {
+  color: red;
 }
 
 ul {
   display: flex;
   flex-flow: row wrap;
+  padding-inline-start: 0;
 }
 
 li {
   list-style: none;
   flex-basis: 100%;
   margin-top: 2rem;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+}
+
+.list-inputs {
+  flex-grow: 2;
+}
+
+.list-delete > button {
+  margin-left: auto;
 }

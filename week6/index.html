@@ -18,21 +18,43 @@
         <h1>TODO LIST</h1>
         <h3>Add Item</h3>
         <div class="add-todo-field">
-          <input type="text" />
-          <button>Add</button>
+          <div id="add-text-container">
+            <input type="text" />
+          </div>
+          <div id="add-button-container">
+            <button class="noborder-button-add">Add</button>
+          </div>
         </div>
         <ul id="todo-list">
           <li>
-            <input type="checkbox" id="c0" class="checkbox" checked />
-            <label for="c0">Go to the store to retrieve some groceries</label>
+            <div class="list-inputs">
+              <input type="checkbox" id="c0" class="checkbox" checked />
+              <label for="c0">Lorem ipsum dolor</label>
+            </div>
+            <div class="list-delete">
+              <button class="noborder-button-delete">Delete</button>
+            </div>
           </li>
           <li>
-            <input type="checkbox" id="c1" class="checkbox" />
-            <label for="c1">Pay bills</label>
+            <div class="list-inputs">
+              <input type="checkbox" id="c1" class="checkbox" />
+              <label for="c1">Pay bills</label>
+            </div>
+            <div class="list-delete">
+              <button class="noborder-button-delete">Delete</button>
+            </div>
           </li>
           <li>
-            <input type="checkbox" id="c2" class="checkbox" />
-            <label for="c2">Pay bills</label>
+            <div class="list-inputs">
+              <input type="checkbox" id="c2" class="checkbox" />
+              <label for="c2">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe,
+                impedit!
+              </label>
+            </div>
+            <div class="list-delete">
+              <button class="noborder-button-delete">Delete</button>
+            </div>
           </li>
         </ul>
       </div>
