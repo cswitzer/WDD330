@@ -1,4 +1,5 @@
 import TaskHandler from "../Modules/toDo.js"
+import { saveToLocalStorage, extractFromLocalStorage } from "../Modules/ls.js"
 
 const taskHandler = new TaskHandler()
 
@@ -9,9 +10,10 @@ const activeTasksBtn = document.querySelector("#active")
 const completedTasksBtn = document.querySelector("#completed")
 let todoList = document.querySelector("#todo-list")
 
-// adds a new task when "Add" button is clicked
 addTaskBtn.addEventListener("click", (e) => {
   taskHandler.addNewTask(addTaskText.value)
+  // reset what is saved to localstorage
+  saveToLocalStorage()
 })
 
 // add event listeners for all classes of "noborder-button-delete"
@@ -19,6 +21,8 @@ addTaskBtn.addEventListener("click", (e) => {
 todoList.addEventListener("click", (e) => {
   if (e.target.classList.contains("noborder-button-delete")) {
     taskHandler.removeTask(e.target.classList[1])
+    // reset what is saved to localstorage
+    saveToLocalStorage()
   }
 })
 
@@ -32,4 +36,14 @@ activeTasksBtn.addEventListener("click", () => {
 
 completedTasksBtn.addEventListener("click", () => {
   taskHandler.filter("completed")
+})
+
+// save all data to local storage before page refreshes
+window.addEventListener("beforeunload", () => {
+  saveToLocalStorage()
+})
+
+window.addEventListener("load", () => {
+  extractFromLocalStorage()
+  localStorage.clear() // clear local storage to prevent duplicate todo's
 })

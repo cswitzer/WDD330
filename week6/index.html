@@ -11,6 +11,12 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo's</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="Modules/utilities.js" type="module"></script>
   </head>
   <body>
     <div class="container">
@@ -25,38 +31,7 @@
             <button class="noborder-button-add">Add</button>
           </div>
         </div>
-        <ul id="todo-list">
-          <li class="c1">
-            <div class="list-inputs">
-              <input type="checkbox" id="c1" class="checkbox" checked />
-              <label for="c1">Lorem ipsum dolor</label>
-            </div>
-            <div class="list-delete">
-              <button class="noborder-button-delete c1">Delete</button>
-            </div>
-          </li>
-          <li class="c2">
-            <div class="list-inputs">
-              <input type="checkbox" id="c2" class="checkbox" />
-              <label for="c2">Pay bills</label>
-            </div>
-            <div class="list-delete">
-              <button class="noborder-button-delete c2">Delete</button>
-            </div>
-          </li>
-          <li class="c3">
-            <div class="list-inputs">
-              <input type="checkbox" id="c3" class="checkbox" />
-              <label for="c3">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe,
-                impedit!
-              </label>
-            </div>
-            <div class="list-delete">
-              <button class="noborder-button-delete c3">Delete</button>
-            </div>
-          </li>
-        </ul>
+        <ul id="todo-list"></ul>
         <div id="filter">
           <div><button id="all">All</button></div>
           <div><button id="active">Active</button></div>

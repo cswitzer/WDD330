@@ -121,6 +121,7 @@ li {
   width: 20%;
 }
 
+/* SUPER IMPORTANT: Used in filtering the list of todos */
 .invisible {
   display: none;
 }
