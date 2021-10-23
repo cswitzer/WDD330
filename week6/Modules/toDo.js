@@ -26,6 +26,7 @@ class TaskHandler {
 
     inputsDiv.appendChild(checkbox)
     inputsDiv.appendChild(label)
+
     li.appendChild(inputsDiv)
   }
 
@@ -70,8 +71,54 @@ class TaskHandler {
   }
 
   // TODO: action will be the parameter sent in by clicking on "all", "active", or "completed"
+  // filter will also be called when adding a new item
   filter(action) {
     const checkboxes = document.querySelectorAll(".checkbox")
+    // console.log(checkboxes)
+    switch (action) {
+      case "all":
+        this.displayAllItems(checkboxes)
+        break
+      case "active":
+        // remove "invisible" class from all items before displaying again
+        this.displayAllItems(checkboxes)
+        this.displayActiveItems(checkboxes)
+        break
+      case "completed":
+        this.displayAllItems(checkboxes)
+        this.displayCompletedItems(checkboxes)
+        break
+    }
+  }
+
+  displayAllItems(checkboxes) {
+    // unhide all the hidden containers
+    checkboxes.forEach((checkbox) => {
+      let className = checkbox.id
+      let hiddenLI = document.querySelector(`li.${className}`)
+      hiddenLI.classList.remove("invisible")
+    })
+  }
+
+  displayActiveItems(checkboxes) {
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        // id of checkbox = className of list to hide
+        let className = checkbox.id
+        let liToHide = document.querySelector(`li.${className}`)
+        liToHide.classList.add("invisible")
+      }
+    })
+  }
+
+  displayCompletedItems(checkboxes) {
+    checkboxes.forEach((checkbox) => {
+      if (!checkbox.checked) {
+        let className = checkbox.id
+        let liToHide = document.querySelector(`li.${className}`)
+        liToHide.classList.add("invisible")
+      }
+    })
   }
 }
 

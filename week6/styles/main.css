@@ -48,9 +48,6 @@
   border-radius: 0.3rem;
 }
 
-#add-button-container > button {
-}
-
 #add-button > button {
   margin-left: auto;
 }
@@ -104,4 +101,26 @@ li {
 
 .list-delete > button {
   margin-left: auto;
+}
+
+#filter {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#filter > div:nth-child(1) {
+  width: 20%;
+}
+
+#filter > div:nth-child(2) {
+  width: 20%;
+}
+
+#filter > div:nth-child(3) {
+  width: 20%;
+}
+
+.invisible {
+  display: none;
 }
