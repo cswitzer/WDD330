@@ -8,11 +8,19 @@ const addTaskText = document.querySelector("#add-text-container input")
 const allTasksBtn = document.querySelector("#all")
 const activeTasksBtn = document.querySelector("#active")
 const completedTasksBtn = document.querySelector("#completed")
+const checkboxes = document.getElementsByClassName("checkbox")
 let todoList = document.querySelector("#todo-list")
 
 addTaskBtn.addEventListener("click", (e) => {
   taskHandler.addNewTask(addTaskText.value)
+
   // reset what is saved to localstorage
+  // Array.prototype.forEach.call(checkboxes, (checkbox) => {
+  //   if (checkbox.checked) {
+  //     console.log("Hello World")
+  //   }
+  // })
+
   saveToLocalStorage()
 })
 
@@ -28,6 +36,10 @@ todoList.addEventListener("click", (e) => {
 
 allTasksBtn.addEventListener("click", () => {
   taskHandler.filter("all")
+  Array.prototype.forEach.call(checkboxes, (checkbox) => {
+    if (checkbox.checked) {
+    }
+  })
 })
 
 activeTasksBtn.addEventListener("click", () => {
