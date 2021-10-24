@@ -14,13 +14,6 @@ let todoList = document.querySelector("#todo-list")
 addTaskBtn.addEventListener("click", (e) => {
   taskHandler.addNewTask(addTaskText.value)
 
-  // reset what is saved to localstorage
-  // Array.prototype.forEach.call(checkboxes, (checkbox) => {
-  //   if (checkbox.checked) {
-  //     console.log("Hello World")
-  //   }
-  // })
-
   saveToLocalStorage()
 })
 

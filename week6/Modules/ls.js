@@ -2,8 +2,19 @@ import htmlEncode from "./utilities.js"
 
 const saveToLocalStorage = () => {
   const todoList = document.querySelector("#todo-list")
+  const checkboxes = todoList.getElementsByClassName("checkbox")
+
+  // save checked status in localstorage
+  Array.prototype.forEach.call(checkboxes, (checkbox) => {
+    if (checkbox.checked) {
+      checkbox.setAttribute("checked", "checked")
+    } else if (!checkbox.checked) {
+      checkbox.removeAttribute("checked")
+    }
+  })
+
   const todoListHTML = document.querySelector("#todo-list").innerHTML
-  // saved checked state of each checkbox
+
   localStorage.setItem("todoList", todoListHTML)
 }
 
