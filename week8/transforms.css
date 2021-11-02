@@ -1,0 +1,55 @@
+#triangle {
+  /* transform: translate(400px, 100px); */
+  /* -webkit-transform: translate(100px, 100px); iOS8, Android */
+  /* -ms-transform: translate(100px, 100px); IE9 only*/
+
+  /* Isolate X and Y translation */
+  transform: translateX();
+  transform: translateY();
+
+  /* Adding transitions for smooth animations */
+  /* transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 50ms; */
+
+  /* put everything into one statement */
+  transition: transform 0.2s ease 50ms;
+
+  animation-name: appearDisappear;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+
+#triangle:hover {
+  /* Don't declare transform multiple times because second transformation will undo the first */
+  /* one-lining is a solution to this issue */
+  transform: rotate(1deg) translateX(20px) scale(1.1);
+}
+
+#chase {
+  /* Quickhand for color and transform */
+  /* Notice how color transitions faster than transform */
+  transition: transform 0.2s ease-out 50ms, color 0.1s linear 50ms;
+}
+
+/* Apply another transformation when user hovers */
+/* NOTE transforms don't work on inline elements. Use inline-block */
+#chase:hover {
+  display: inline-block;
+  transform: scale(1.5, 1.5);
+  color: cadetblue;
+  margin-left: 1rem;
+}
+
+/* for animations */
+@keyframes appearDisappear {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  20%,
+  80% {
+    opacity: 1;
+  }
+}
