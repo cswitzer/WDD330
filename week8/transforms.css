@@ -42,6 +42,10 @@
   margin-left: 1rem;
 }
 
+.myCanvas {
+  border: dotted 2px black;
+}
+
 /* for animations */
 @keyframes appearDisappear {
   0%,
