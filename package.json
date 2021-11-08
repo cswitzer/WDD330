@@ -1,0 +1,27 @@
+{
+  "name": "wdd330",
+  "version": "1.0.0",
+  "description": "WDD330 code implementations",
+  "scripts": {
+    "start": "nodemon week9/backendPractice/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cswitzer/WDD330.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cswitzer/WDD330/issues"
+  },
+  "homepage": "https://github.com/cswitzer/WDD330#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jest": "^27.2.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
