@@ -30,38 +30,47 @@ h1 {
 
 .grid-item-1 {
   grid-column: 1 / 2;
+  grid-row: 1 / 2;
 }
 
 .grid-item-2 {
   grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
 .grid-item-3 {
   grid-column: 3 / 4;
+  grid-row: 1 / 2;
 }
 
 .grid-item-4 {
   grid-column: 1 / 2;
+  grid-row: 2 / 3;
 }
 
 .grid-item-5 {
   grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
 
 .grid-item-6 {
   grid-column: 3 / 4;
+  grid-row: 2 / 3;
 }
 
 .grid-item-7 {
   grid-column: 1 / 2;
+  grid-row: 3 / 4;
 }
 
 .grid-item-8 {
   grid-column: 2 / 3;
+  grid-row: 3 / 4;
 }
 
 .grid-item-9 {
   grid-column: 3 / 4;
+  grid-row: 3 / 4;
 }
 
 /* animations and effects */
@@ -115,4 +124,9 @@ h3 {
 
 img:hover {
   filter: blur(2px) brightness(60%);
+}
+
+/* refer to event listener in index.js */
+.dragging {
+  opacity: 0.5;
 }
