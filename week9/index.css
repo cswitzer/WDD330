@@ -131,6 +131,7 @@ img:hover {
   opacity: 0.5;
 }
 
+/* tablets and iphones */
 @media screen and (max-width: 768px) {
   .grid-container {
     grid-template-rows: repeat(9, 1fr);
@@ -182,6 +183,7 @@ img:hover {
   }
 }
 
+/* large tablets and semi-wide monitors */
 @media screen and (min-width: 769px) and (max-width: 1450px) {
   .grid-container {
     grid-template-columns: repeat(4, 1fr);

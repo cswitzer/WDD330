@@ -5,7 +5,7 @@ const port = 3000
 app.use(express.json())
 app.use(express.urlencoded())
 
-app.post("/what", function (req, res) {
+app.post("/name", function (req, res) {
   console.log(req.body)
 })
 
