@@ -8,8 +8,10 @@
   </head>
   <body>
     <!--So magical, all pages rendered will be replace body through express-hbs-->
-    {{>header}}
-    {{{body}}}
+    <div class="main-content">
+      {{>header}}
+      {{{body}}}
+    </div>
     {{>footer}}
   </body>
 </html>

@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 10</title>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../pokedex/public/css/styles.css" />
+    <script src="../bundle.js" charset="utf-8" defer></script>
   </head>
   <body>
-    <h1>Week 10</h1>
+    <div id="wrapper">
+      <div id="register">
+        <form method="get" id="regForm" action="http://127.0.0.1:3000/register">
+          <div class="row">
+            <div class="input-group">
+              <label for="first-name">First Name: </label>
+              <input
+                name="firstName"
+                id="first-name"
+                class="register-input"
+                type="text"
+                placeholder="First Name"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="last-name">Surname: </label>
+              <input
+                name="lastName"
+                id="last-name"
+                class="register-input"
+                type="text"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-group">
+              <label for="email">Email: </label>
+              <input
+                name="email"
+                id="email"
+                class="register-input"
+                type="email"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-group">
+              <label for="password">Password: </label>
+              <input
+                name="password"
+                id="password"
+                class="register-input"
+                type="password"
+                required
+              />
+            </div>
+          </div>
+
+          <button class="submit-btn" type="submit">submit</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
