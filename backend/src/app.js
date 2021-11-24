@@ -1,8 +1,14 @@
 // connects to pokedex
 const path = require("path")
 const express = require("express")
+const dotenv = require("dotenv")
 const cors = require("cors")
+const connectDB = require("../config/db.js")
 const { engine } = require("express-handlebars")
+
+dotenv.config()
+
+connectDB()
 
 const app = express()
 const port = process.env.PORT || 3000
