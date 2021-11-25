@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node backend/src/app.js",
     "dev": "nodemon backend/src/app.js -e js,hbs",
-    "build": "browserify pokedex/public/js/app.js -o pokedex/public/js/bundle.js"
+    "build": "browserify pokedex/public/js/src/app.js -o pokedex/public/js/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -21,12 +21,15 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "browserify": "^17.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-handlebars": "^6.0.1",
+    "gulp": "^4.0.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.13",
     "path": "^0.12.7",
+    "uniq": "^1.0.1",
     "validator": "^13.7.0",
     "vinyl-source-stream": "^2.0.0"
   },
