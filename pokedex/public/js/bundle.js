@@ -6674,7 +6674,6 @@ function whitelist(str, chars) {
 module.exports = exports.default;
 module.exports.default = exports.default;
 },{"./util/assertString":96}],102:[function(require,module,exports){
-// can use npm modules thanks to browserify (refer to build script in package.json)
 const validator = require("validator")
 const registerForm = document.querySelector("#regForm")
 

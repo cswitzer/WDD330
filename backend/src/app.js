@@ -1,10 +1,12 @@
 // connects to pokedex
 const path = require("path")
-const express = require("express")
 const dotenv = require("dotenv")
+const express = require("express")
 const cors = require("cors")
-const connectDB = require("../config/db.js")
 const { engine } = require("express-handlebars")
+
+const connectDB = require("../config/db.js")
+const User = require("../models/userModel.js")
 
 dotenv.config()
 
@@ -53,14 +55,18 @@ app.get("/register", (req, res) => {
   res.render("register")
 })
 
-app.post("/register", (req, res) => {
-  console.log(req.body.firstName)
-})
-
-app.get("/test", (req, res) => {
-  res.json({
-    message: "Hello World",
+// use bcrypt to hash the password
+app.post("/register", async (req, res) => {
+  const user = new User({
+    ...req.body,
   })
+
+  try {
+    await user.save()
+    res.status(201).render("details")
+  } catch (e) {
+    res.status(400).send(e)
+  }
 })
 
 app.listen(port, () => {
