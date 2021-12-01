@@ -47,25 +47,39 @@ app.get("", (req, res) => {
   res.render("index")
 })
 
-app.get("/details", (req, res) => {
+app.get("/users/details", (req, res) => {
   res.render("details")
 })
 
-app.get("/register", (req, res) => {
+app.get("/users/register", (req, res) => {
   res.render("register")
 })
 
 // use bcrypt to hash the password
-app.post("/register", async (req, res) => {
+app.post("/users/register", async (req, res) => {
   const user = new User({
     ...req.body,
   })
 
   try {
     await user.save()
-    res.status(201).render("details")
+    res.status(201).render("login")
   } catch (e) {
     res.status(400).send(e)
+  }
+})
+
+app.get("/users/login", (req, res) => {
+  res.render("login")
+})
+
+app.post("/users/login", async (req, res) => {
+  try {
+    const user = await User.findByCredentials(req.body.email, req.body.password)
+    const token = await user.generateAuthToken()
+    res.send({ user, token })
+  } catch (e) {
+    res.status(400).send()
   }
 })
 
