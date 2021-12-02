@@ -82,7 +82,10 @@ userSchema.methods.generateAuthToken = async function () {
   const user = this
   const token = jwt.sign(
     { _id: user._id.toString() },
-    "thisIsAnIncredibleKey123!!dsa"
+    "thisIsAnIncredibleKey123!!dsa",
+    {
+      expiresIn: "1h",
+    }
   )
 
   // generate token for the user to implement signing in

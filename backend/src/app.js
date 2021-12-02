@@ -3,10 +3,12 @@ const path = require("path")
 const dotenv = require("dotenv")
 const express = require("express")
 const cors = require("cors")
+const cookieParser = require("cookie-parser")
 const { engine } = require("express-handlebars")
 
 const connectDB = require("../config/db.js")
 const User = require("../models/userModel.js")
+const auth = require("../middleware/auth")
 
 dotenv.config()
 
@@ -24,6 +26,7 @@ app.use(
 
 app.use(express.json())
 app.use(express.urlencoded())
+app.use(cookieParser())
 
 const publicDirPath = path.join(__dirname, "../../pokedex/public") // static js and css files
 const viewsPath = path.join(__dirname, "../templates/views") // res.render() looks in view folder by default
@@ -77,10 +80,26 @@ app.post("/users/login", async (req, res) => {
   try {
     const user = await User.findByCredentials(req.body.email, req.body.password)
     const token = await user.generateAuthToken()
-    res.send({ user, token })
+    res.cookie("auth-token", token)
+    res.send({ message: "you did it!" })
   } catch (e) {
     res.status(400).send()
   }
+})
+
+// will be changed to post later
+app.get("/users/logoutAll", auth, async (req, res) => {
+  try {
+    req.user.tokens = []
+    await req.user.save()
+    res.send()
+  } catch (e) {
+    res.status(500).send()
+  }
+})
+
+app.get("/users/test", auth, async (req, res) => {
+  res.send(req.body)
 })
 
 app.listen(port, () => {
