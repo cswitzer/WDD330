@@ -4,8 +4,7 @@
   "description": "WDD330 code implementations",
   "scripts": {
     "start": "node backend/src/app.js",
-    "dev": "nodemon backend/src/app.js -e js,hbs",
-    "build": "browserify pokedex/public/js/src/app.js -o pokedex/public/js/bundle.js"
+    "dev": "nodemon backend/src/app.js -e js,hbs"
   },
   "repository": {
     "type": "git",
