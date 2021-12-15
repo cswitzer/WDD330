@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+:root {
+  --white: #ffffff;
+  --grey: #dfdfdf;
+  --dark-grey: grey;
+  --black: #000000;
+  --red: #fb1b1b;
+  --light-yellow: #ffcc00;
+  --dark-yellow: #d5a100;
+  --light-blue: #0075be;
+  --dark-blue: #0a285f;
+  --purple: #6649b8;
+}
+
+body {
+  background-color: var(--grey);
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* push the footer to the bottom */
+.main-content {
+  flex-grow: 1;
+  margin-left: 5rem; /* give navbar some space */
+  padding: 0.7rem;
+}
+
+#wrapper {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-radius: 0.4rem;
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-input {
+  padding: 0.3rem;
+  margin: 0.1rem;
+  margin-bottom: 0.4rem; /* overwrite 0.1 bottom margin */
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}
+
+/* .register-input:focus {
+}
+
+.submit-btn {
+} */
+
+/* Modify scrollbar */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--purple);
+}
+
+/* CSS for the navbar */
+.navbar {
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--white);
+  transition: 350ms ease;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+  transition: 300ms ease;
+}
+
+/* Push last nav element to the bottom */
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+/* Arrange items in a tags in row format */
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding-left: 1rem;
+  text-decoration: none;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+  color: black;
+}
+
+.nav-link svg {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+/* We want the user to see the navbar text when hovering over it */
+.navbar:hover {
+  width: 16rem;
+}
+
+.navbar:hover .link-text {
+  display: block;
+}
+
+.logo:hover > .nav-link:hover {
+  background-color: var(--purple);
+}
+
+/* flip the logo arrow around on hover */
+.logo .fa-angle-double-right {
+  transform: rotate(0deg);
+  transition: 400ms ease;
+}
+
+.navbar:hover .logo .fa-angle-double-right {
+  transform: rotate(-180deg);
+  color: var(--grey);
+}
+
+.nav-link:hover {
+  background-color: var(--dark-grey);
+}
+
+.nav-item:hover .fa-sign-in-alt {
+  color: aliceblue;
+}
+
+.nav-item:hover .fa-sign {
+  color: aliceblue;
+}
+
+/* Make a nice hovering effect over each navbar link */
+.fa-sign-in-alt,
+.fa-sign,
+.fa-angle-double-right {
+  color: black;
+  transition: 400ms ease;
+}
+
+/* make rows in form display columns for responsiveness */
+@media only screen and (max-width: 500px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* make navbar responsive */

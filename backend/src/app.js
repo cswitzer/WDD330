@@ -28,7 +28,8 @@ app.use(express.json())
 app.use(express.urlencoded())
 app.use(cookieParser())
 
-const publicDirPath = path.join(__dirname, "../../pokedex/public") // static js and css files
+const publicDirPath = path.join(__dirname, "../public") // static js and css files
+// const publicDirPath = path.join(__dirname, "../../pokedex/public")
 const viewsPath = path.join(__dirname, "../templates/views") // res.render() looks in view folder by default
 const partialsPath = path.join(__dirname, "../templates/partials")
 
@@ -40,10 +41,12 @@ app.engine(
     partialsDir: `${partialsPath}`,
   })
 )
+
 app.set("view engine", "hbs")
 app.set("views", viewsPath)
 
 // where to find static html, js, and css files
+// app.use(express.static(publicDirPath))
 app.use(express.static(publicDirPath))
 
 app.get("", (req, res) => {

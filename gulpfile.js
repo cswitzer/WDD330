@@ -5,8 +5,8 @@ const gulp = require("gulp")
 const source = require("vinyl-source-stream")
 
 gulp.task("js", () => {
-  return browserify("./pokedex/public/src/app")
+  return browserify("./backend/public/src/app")
     .bundle()
     .pipe(source("bundle.js"))
-    .pipe(gulp.dest("./pokedex/public/js/"))
+    .pipe(gulp.dest("./backend/public/js/"))
 })
