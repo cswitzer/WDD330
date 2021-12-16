@@ -30,6 +30,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.13",
     "path": "^0.12.7",
+    "pokeapi-js-wrapper": "^1.2.0",
     "uniq": "^1.0.1",
     "validator": "^13.7.0",
     "vinyl-source-stream": "^2.0.0"

@@ -89,8 +89,6 @@ body::-webkit-scrollbar-thumb {
 
 /* CSS for the navbar */
 .navbar {
-  width: 5rem;
-  height: 100vh;
   position: fixed;
   background-color: var(--white);
   transition: 350ms ease;
@@ -146,15 +144,6 @@ body::-webkit-scrollbar-thumb {
   margin: 0 1.5rem;
 }
 
-/* We want the user to see the navbar text when hovering over it */
-.navbar:hover {
-  width: 16rem;
-}
-
-.navbar:hover .link-text {
-  display: block;
-}
-
 .logo:hover > .nav-link:hover {
   background-color: var(--purple);
 }
@@ -185,7 +174,8 @@ body::-webkit-scrollbar-thumb {
 /* Make a nice hovering effect over each navbar link */
 .fa-sign-in-alt,
 .fa-sign,
-.fa-angle-double-right {
+.fa-angle-double-right,
+.fa-moon {
   color: black;
   transition: 400ms ease;
 }
@@ -198,3 +188,45 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* make navbar responsive */
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  /* We want the user to see the navbar text when hovering over it */
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: block;
+  }
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  .main-content {
+    margin: 0;
+  }
+}
