@@ -1,0 +1,34 @@
+:root {
+  --white: #ffffff;
+  --grey: #dfdfdf;
+  --dark-grey: grey;
+  --black: #000000;
+  --red: #fb1b1b;
+  --light-yellow: #ffcc00;
+  --dark-yellow: #d5a100;
+  --light-blue: #0075be;
+  --dark-blue: #0a285f;
+  --purple: #6649b8;
+}
+
+#register {
+  background-color: var(--grey);
+}
+
+.submit-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.submit-btn {
+  padding: 0.5rem;
+  width: 100px;
+  border-radius: 10px;
+  transition: 200ms ease;
+}
+
+.submit-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 5px #aaaaaa;
+}
