@@ -33,7 +33,7 @@ class PokemonGetter {
     }
   }
 
-  async getTwelvePokemon() {
+  async retrievePokemon() {
     console.log("offset: " + this.interval.offset)
     console.log("limit: " + this.interval.limit)
 
@@ -45,7 +45,7 @@ class PokemonGetter {
     // clear the array so we don't populate the same pokemon twice next time
     this.pokemonList = []
 
-    // prepare the next 12 pokemon to be displayed if the user wants
+    // prepare the next 8 pokemon to be displayed if the user wants
     this.interval.offset += 8
   }
 
@@ -112,13 +112,13 @@ class PokemonGetter {
 
 // use the class to perform useful tasks
 const pokemonGetter = new PokemonGetter()
-pokemonGetter.getTwelvePokemon()
+pokemonGetter.retrievePokemon()
 
 // add event listener to load more pokemon if user desires
 if (document.querySelector(".poke-container")) {
   const loadPokemonBtn = document.getElementById("load-more-btn")
   loadPokemonBtn.addEventListener("click", () => {
-    pokemonGetter.getTwelvePokemon()
+    pokemonGetter.retrievePokemon()
   })
 }
 
