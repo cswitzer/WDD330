@@ -1,6 +1,27 @@
 const Pokedex = require("pokeapi-js-wrapper")
 const P = new Pokedex.Pokedex()
 
+const colors = {
+  normal: "#A8A77A",
+  fire: "#EE8130",
+  water: "#6390F0",
+  electric: "#F7D02C",
+  grass: "#7AC74C",
+  ice: "#96D9D6",
+  fighting: "#C22E28",
+  poison: "#A33EA1",
+  ground: "#E2BF65",
+  flying: "#A98FF3",
+  psychic: "#F95587",
+  bug: "#A6B91A",
+  rock: "#B6A136",
+  ghost: "#735797",
+  dragon: "#6F35FC",
+  dark: "#705746",
+  steel: "#B7B7CE",
+  fairy: "#D685AD",
+}
+
 class PokemonGetter {
   constructor() {
     this.pokemonList = []
@@ -8,7 +29,7 @@ class PokemonGetter {
     // retrieve 12 pokemon at a time
     this.interval = {
       offset: 0,
-      limit: 12,
+      limit: 8,
     }
   }
 
@@ -25,7 +46,7 @@ class PokemonGetter {
     this.pokemonList = []
 
     // prepare the next 12 pokemon to be displayed if the user wants
-    this.interval.offset += 12
+    this.interval.offset += 8
   }
 
   populatePokeContainer() {
@@ -69,12 +90,23 @@ class PokemonGetter {
       <div class="img-container">
         <img src=${pokeImg} alt="picture of ${capName}" class="poke-img" />
       </div>
-      ${capName}
+      <h3>${capName}</h3>
       <div class="types">
-        <span>type 1: ${types[0].type.name}</span>
-        ${types.length > 1 ? `<span>type 2: ${types[1].type.name}</span>` : ""}
+        <span class="type">${types[0].type.name}</span>
+        ${
+          types.length > 1
+            ? `<span class="type">${types[1].type.name}</span>`
+            : ""
+        }
       </div>
     `
+
+    // color in each pokemon's type according to type
+    const typeSpan = pokeCard.querySelectorAll(".type")
+    console.log(typeSpan)
+    typeSpan.forEach(
+      (type) => (type.style.backgroundColor = colors[type.textContent])
+    )
   }
 }
 
