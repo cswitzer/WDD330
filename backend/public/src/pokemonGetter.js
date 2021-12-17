@@ -1,28 +1,31 @@
 const Pokedex = require("pokeapi-js-wrapper")
 const P = new Pokedex.Pokedex()
 
-// Retrieve 20 pokemon at a time
-const interval = {
-  offset: 0,
-  limit: 12,
-}
-
 class PokemonGetter {
   constructor() {
     this.pokemonList = []
     this.pokeContainer = document.querySelector(".poke-container")
+    // retrieve 12 pokemon at a time
+    this.interval = {
+      offset: 0,
+      limit: 12,
+    }
   }
 
   async getTwelvePokemon() {
-    const { results } = await P.getPokemonsList(interval)
+    console.log("offset: " + this.interval.offset)
+    console.log("limit: " + this.interval.limit)
+
+    const { results } = await P.getPokemonsList(this.interval)
     results.forEach((pokemon) => this.pokemonList.push(pokemon))
 
-    // populate html page with pokemon
     this.populatePokeContainer()
 
-    // prepare the next 10 pokemon to be displayed if the user wants
-    interval.offset += 12
-    interval.limit += 12
+    // clear the array so we don't populate the same pokemon twice next time
+    this.pokemonList = []
+
+    // prepare the next 12 pokemon to be displayed if the user wants
+    this.interval.offset += 12
   }
 
   populatePokeContainer() {
@@ -39,11 +42,12 @@ class PokemonGetter {
     const name = pokemon.name
     const pokeData = await this.getPokemon(name)
 
+    // create and render pokecard
     let pokeCard = document.createElement("div")
     pokeCard.classList.add("pokecard")
+    // console.log(pokeData)
+    this.renderCardHTML(pokeCard, name, pokeData)
 
-    // testing code
-    pokeCard.appendChild(document.createTextNode(name))
     this.pokeContainer.appendChild(pokeCard)
   }
 
@@ -51,10 +55,39 @@ class PokemonGetter {
     const pokemon = await P.getPokemonByName(name)
     return pokemon
   }
+
+  renderCardHTML(pokeCard, name, pokeData) {
+    const capName = name[0].toUpperCase() + name.slice(1)
+    const types = pokeData.types
+    const pokeID = pokeData.id // needed for the photo
+    const pokeImg =
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
+      pokeID +
+      ".png"
+
+    pokeCard.innerHTML = `
+      <div class="img-container">
+        <img src=${pokeImg} alt="picture of ${capName}" class="poke-img" />
+      </div>
+      ${capName}
+      <div class="types">
+        <span>type 1: ${types[0].type.name}</span>
+        ${types.length > 1 ? `<span>type 2: ${types[1].type.name}</span>` : ""}
+      </div>
+    `
+  }
 }
 
 // use the class to perform useful tasks
 const pokemonGetter = new PokemonGetter()
 pokemonGetter.getTwelvePokemon()
+
+// add event listener to load more pokemon if user desires
+if (document.querySelector(".poke-container")) {
+  const loadPokemonBtn = document.getElementById("load-more-btn")
+  loadPokemonBtn.addEventListener("click", () => {
+    pokemonGetter.getTwelvePokemon()
+  })
+}
 
 module.exports = PokemonGetter
